@@ -32,7 +32,8 @@ services:
   mosquitto:
     image: eclipse-mosquitto:2.0
     ports:
-      - "1883:1883"
+      - "1883:1883" # TCP MQTT
+      - "9001:9001" # WebSocket MQTT
     volumes:
       - ./mosquitto.conf:/mosquitto/config/mosquitto.conf
     networks:
